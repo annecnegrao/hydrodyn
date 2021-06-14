@@ -1,0 +1,56 @@
+
+Simulacao de todos os eventos listados do Gregorio
+
+As simulacoes sao feitas considerando dois tipos de fundo de canal:
+- fundo simples (diretorio fundo_simples)
+- fundo real (diretorio fundo_real)
+
+No presente diretorio encontra-se as principais informacoes do canal
+
+Os arquivos com os eventos que se deseja simular devem ser listados em arq_eventos.txt
+
+As simulacoes sao realizada nos diretorios fundo_simples e fundo_real da mesma forma
+para ambos, mudando apenas o fundo do canal
+
+AkanMelinaLPI-Gregorio-aqueceCI.f95
+    Geracao de CIs a partir de uma linha d'agua linear
+        cria diretorios para cada evento
+        inicia uma linha d'agua linear a partir dos niveis do primeiro instante do evento
+        aquece a CI atraves do modelo AkanMelinaLPI
+        caso o nivel seja muito baixo e nao seja possivel aquecer o arquivo do evento e 
+        cortado ate atingir niveis que sejam possiveis simular (arquivos *cut.txt)
+    ATENCAO: Esse script so roda em ambiente Linux ou MacOS!
+    entradas:
+        ../info_canal.txt
+        fundo_simplificado.txt ou fundo_real.txt
+        ../arq_eventos.txt
+        arquivos dos eventos
+    saidas:
+        arq_eventos_cut.txt
+        diretorios dos eventos
+        ./<diretorio_evento>/h_y_obs.txt
+        ./<diretorio_evento>/CI_linear.txt
+        ./<diretorio_evento>/CI_aquecido.txt
+        ./<diretorio_evento>/linha.gnu
+
+./<diretorio_evento>/linha.gnu
+    Gera o grafico do perfil do canal com a CI linear e a CI aquecida
+
+AkanMelinaLPI-Gregorio-simulacao.f95
+    Simulacao do Gregorio utilizando o modelo AkanMelinaLPI
+        calculo do coeficiente de eficiencia de Nash-Sutcliffe
+    entradas:
+        ../info_canal.txt
+        fundo_simplificado.txt ou fundo_real.txt
+        arq_eventos_cut.txt
+        ./<diretorio_evento>/CI_aquecido.txt
+    saidas:
+        ENS.txt
+        ./<diretorio_evento>/res_xh.txt
+        ./<diretorio_evento>/res_xQ.txt
+        ./<diretorio_evento>/res_xy.txt
+        ./<diretorio_evento>/res_tQ.txt
+        ./<diretorio_evento>/res_ty.txt
+
+compara_limnigramas_multiplot.gnu
+    Plota o limnigrama de todas as simulacoes 
