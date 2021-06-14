@@ -1,0 +1,11 @@
+9.81        # gravidade
+245         # comprimento do trecho
+8           # largura
+0           # canal retangular
+0.020       # n de Manning
+0.6         # teta
+10          # numero de iteracoes
+0.00001     # tolerancia
+1           # aproximacao para (1) fundo simples ou (2) fundo com degraus
+1           # processo de (1) aquecimento ou (2) simulacao
+10           # termo m do filtro LPI
