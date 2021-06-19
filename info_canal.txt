@@ -1,11 +1,11 @@
-9.81        # gravidade
-245         # comprimento do trecho
-8           # largura
-0           # canal retangular
-0.020       # n de Manning
+9.81        # gravity [m3/s]
+245         # total stretch length [m]
+8           # width [m]
+0           # rectangular channel 
+0.020       # Manning coefficient
 0.6         # teta
-10          # numero de iteracoes
-0.00001     # tolerancia
-1           # aproximacao para (1) fundo simples ou (2) fundo com degraus
-1           # processo de (1) aquecimento ou (2) simulacao
-10           # termo m do filtro LPI
+10          # number of iterations 
+0.00001     # tolerance 
+1           # approximation to (1) simple bottom or (2) bottom with steps 
+1           # process to (1) heating or (2) simulation 
+10          # m term of the LPI filter 
