@@ -1,10 +1,12 @@
 # hydrodyn
 1D Hydrodynamic Model for urban channels that I developed during my master's degree.
 
-Developed by Anne Caroline Negrão
-annecnegrao@gmail.com
+Developed by _Anne Caroline Negrão_
+**annecnegrao@gmail.com**
 
-AkanMelinaLPI-regorio.f90
+--------
+
+## _AkanMelinaLPI-Gregorio.f90_
 
 Simulation of Gregorio creek considering the following channel bottoms:
 - simple bottom (fundo_simples)
@@ -16,7 +18,7 @@ fundo_degraus.txt
 Where x is the horizontal distance in meters, S0 is the slope and
 z is the depth.
 
-Into info_canal there is some information for the symulation.
+Into info_canal.txt there is some information for the symulation.
 
 Into arc_eventos.txt there is a list with the file name of events that
 will be simulated.
@@ -31,13 +33,13 @@ If simulation process (2) is activate then:
     Simulation of Gregorio creek with heated initial condition
     Calculation of the Nash-Sutcliffe coefficient
 
-Inputs:
+## Inputs:
     info_canal.txt
     fundo_simplificado.txt or fundo_real.txt
     arq_eventos.txt or arq_eventos_cut.txt
     CI_aquecido.txts
 
-Outputs:
+## Outputs:
     arq_eventos_cut.txt
     ./<event_directory>/h_y_obs.txt
     ./<event_directory>/h_y_obs.txt
